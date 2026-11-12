@@ -1,0 +1,32 @@
+// Emit the browser's static text snapshot from Cerune.
+// Imported and called by src/main.ceru; no duplicate card data.
+// Run: cerune run src/main.ceru
+// Protocol: CERUNE_TAROT, 78 x 11 card lines, ADVICE, 12 x 3 lines, END.
+// Fields must not contain newlines; tags within a field use |.
+
+import "cards.ceru" as deck;
+
+pub fn export() -> void {
+    // A deterministic interchange protocol emitted by running Cerune itself.
+    print("CERUNE_TAROT");
+    for (card: deck::Card in deck::CARDS) {
+        print(card.id);
+        print(card.name);
+        print(card.en);
+        print(card.arcana);
+        print(card.suit);
+        print(card.number);
+        print(card.symbol);
+        print(card.upright);
+        print(card.reversed);
+        print(card.upright_tags);
+        print(card.reversed_tags);
+    }
+    print("ADVICE");
+    for (item: deck::Advice in deck::ADVICES) {
+        print(item.topic);
+        print(item.tags);
+        print(item.message);
+    }
+    print("END");
+}

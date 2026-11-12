@@ -1,0 +1,17 @@
+; Cerune IR v0.2
+; #N identifies one statement or expression in this compilation
+
+fn %module_1_draw_index@0(%seed@0: i32, %remaining@1: i32) -> i32 {
+  #0 if.bool #1 le.i32(#2 %remaining@1:i32, #3 0i32) {
+    #4 return #5 0i32
+  }
+  #6 return #7 rem.i32(#8 %seed@0:i32, #9 %remaining@1:i32)
+}
+
+fn %module_1_is_reversed@1(%seed@2: i32) -> i32 {
+  #10 return #11 rem.i32(#12 %seed@2:i32, #13 2i32)
+}
+
+fn %module_1_rank_fragment@2(%keyword_hits@3: i32, %theme_match@4: i32, %position_match@5: i32) -> i32 {
+  #14 return #15 add.i32(#16 add.i32(#17 mul.i32(#18 %keyword_hits@3:i32, #19 10i32), #20 mul.i32(#21 %theme_match@4:i32, #22 4i32)), #23 mul.i32(#24 %position_match@5:i32, #25 2i32))
+}

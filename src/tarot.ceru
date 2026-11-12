@@ -1,0 +1,17 @@
+// タロットの選択・解釈スコアを担当するCeruneライブラリ。
+// JS/Wasm公開インターフェースはi32のみ。抽選用のseedは0以上を渡す。
+
+pub fn draw_index(seed: i32, remaining: i32) -> i32 {
+    if remaining <= 0 {
+        return 0;
+    }
+    return seed % remaining;
+}
+
+pub fn is_reversed(seed: i32) -> i32 {
+    return seed % 2;
+}
+
+pub fn rank_fragment(keyword_hits: i32, theme_match: i32, position_match: i32) -> i32 {
+    return keyword_hits * 10 + theme_match * 4 + position_match * 2;
+}

@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+*.log
+*.tmp
+
+# Native / Visual Studio outputs
+/target/
+**/bin/
+**/obj/
+**/.vs/
+desktop/CeruneTarot/native/*.exe

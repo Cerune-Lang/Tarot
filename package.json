@@ -1,0 +1,9 @@
+{
+  "name": "cerune-tarot-dogfood",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/test.mjs && node scripts/check-data.mjs"
+  }
+}

@@ -1,0 +1,27 @@
+<Window x:Class="CeruneTarot.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cerune Tarot" Width="520" Height="560" MinWidth="420" MinHeight="340">
+    <DockPanel Margin="16">
+        <StackPanel DockPanel.Dock="Top">
+            <TextBlock Text="Cerune Tarot" FontSize="22" Margin="0,0,0,16" />
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                <ComboBox x:Name="TopicBox" Width="180" SelectedIndex="0" Margin="0,0,8,0">
+                    <ComboBoxItem Content="今日のこと" Tag="general" />
+                    <ComboBoxItem Content="恋愛" Tag="love" />
+                    <ComboBoxItem Content="仕事・将来" Tag="work" />
+                    <ComboBoxItem Content="人間関係" Tag="relations" />
+                </ComboBox>
+                <ComboBox x:Name="CountBox" Width="100" SelectedIndex="0" Margin="0,0,8,0">
+                    <ComboBoxItem Content="1枚" Tag="1" />
+                    <ComboBoxItem Content="3枚" Tag="3" />
+                </ComboBox>
+                <Button x:Name="DrawButton" Content="占う" Width="90" Click="DrawButton_Click" />
+            </StackPanel>
+            <Separator Margin="0,0,0,8" />
+        </StackPanel>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="Results" />
+        </ScrollViewer>
+    </DockPanel>
+</Window>

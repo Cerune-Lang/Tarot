@@ -1,0 +1,44 @@
+; Cerune bytecode v0.1
+
+.function 0 module_1_draw_index(0:seed:i32, 1:remaining:i32) -> i32
+.slot 0 seed i32
+.slot 1 remaining i32
+0000  load 1        ; remaining
+0001  push.i32 0
+0002  le.i32
+0003  jump-if-false 0006
+0004  push.i32 0
+0005  return.value
+0006  load 0        ; seed
+0007  load 1        ; remaining
+0008  rem.i32
+0009  return.value
+.end
+
+.function 1 module_1_is_reversed(0:seed:i32) -> i32
+.slot 0 seed i32
+0000  load 0        ; seed
+0001  push.i32 2
+0002  rem.i32
+0003  return.value
+.end
+
+.function 2 module_1_rank_fragment(0:keyword_hits:i32, 1:theme_match:i32, 2:position_match:i32) -> i32
+.slot 0 keyword_hits i32
+.slot 1 theme_match i32
+.slot 2 position_match i32
+0000  load 0        ; keyword_hits
+0001  push.i32 10
+0002  mul.i32
+0003  load 1        ; theme_match
+0004  push.i32 4
+0005  mul.i32
+0006  add.i32
+0007  load 2        ; position_match
+0008  push.i32 2
+0009  mul.i32
+0010  add.i32
+0011  return.value
+.end
+
+0000  halt

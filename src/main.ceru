@@ -1,0 +1,5 @@
+import "export.ceru" as export;
+
+fn main() -> void {
+    export::export();
+}
